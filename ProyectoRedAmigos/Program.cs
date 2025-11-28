@@ -19,5 +19,9 @@
         red.AgregarAmistad(pedro, juan);
 
         red.MostrarRed();
+
+        red.Floyd();
+        red.Prim();
+        red.Kruskal();
     }
 }
