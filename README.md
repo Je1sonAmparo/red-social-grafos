@@ -91,7 +91,7 @@ Este repositorio se creó para un proyecto grupal con las siguientes caracterís
 1. Clona el repositorio:
 
 ```
-git clone https://github.com/tuusuario/red-social-grafos
+git clone https://github.com/Je1sonAmparo/red-social-grafos
 ```
 
 2. Entra al directorio:
