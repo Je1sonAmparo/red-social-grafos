@@ -24,7 +24,7 @@ public class GrafoAmigos
         }
     }
 
-    private int ObtenerIndice(Usuario u)
+    private int BuscarUsuario(Usuario u)
     {
         for (int i = 0; i < contadorUsuarios; i++)
         {
@@ -36,33 +36,36 @@ public class GrafoAmigos
 
     public void AgregarAmistad(Usuario a, Usuario b)
     {
-        int i = ObtenerIndice(a);
-        int j = ObtenerIndice(b);
+        int i = BuscarUsuario(a);
+        int j = BuscarUsuario(b);
 
-        if (i != -1 && j != -1)
+        if (i == -1 || j == -1)
         {
-            matrizAdyacencia[i, j] = 1;
-            matrizAdyacencia[j, i] = 1; // Amistad bidireccional
+            Console.WriteLine("Uno de los usuarios no existe.");
+            return;
         }
+
+        matrizAdyacencia[i, j] = 1;
+        matrizAdyacencia[j, i] = 1;
     }
 
     public void MostrarRed()
     {
         Console.WriteLine("=== MATRIZ DE ADYACENCIA ===\n");
-
-        Console.Write("     ");
+        Console.Write("\t");
+        
         for (int k = 0; k < contadorUsuarios; k++)
         {
-            Console.Write($"{usuarios[k].Nombre.Substring(0, 1)} ");
+            Console.Write(usuarios[k].Nombre[0] + "\t");
         }
         Console.WriteLine();
 
         for (int i = 0; i < contadorUsuarios; i++)
         {
-            Console.Write($"{usuarios[i].Nombre.Substring(0, 1)}:   ");
+            Console.Write($"{usuarios[i].Nombre + "\t");
             for (int j = 0; j < contadorUsuarios; j++)
             {
-                Console.Write($"{matrizAdyacencia[i, j]} ");
+                Console.Write(matrizAdyacencia[i, j] + "\t");
             }
             Console.WriteLine();
         }
