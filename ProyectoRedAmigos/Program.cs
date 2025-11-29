@@ -4,10 +4,10 @@
     {
         GrafoAmigos red = new GrafoAmigos(10);
 
-        var juan = new Usuario("Juan");
-        var maria = new Usuario("María");
-        var pedro = new Usuario("Pedro");
-        var ana = new Usuario("Ana");
+        Usuario juan = new Usuario("Juan");
+        Usuario maria = new Usuario("María");
+        Usuario pedro = new Usuario("Pedro");
+        Usuario ana = new Usuario("Ana");
 
         red.AgregarUsuario(juan);
         red.AgregarUsuario(maria);
